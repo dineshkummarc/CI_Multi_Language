@@ -1,4 +1,6 @@
-CI_Multi_Language
-=================
+Codeigniter with Multi Language
+===============================
 
-Multi Language using Codeigniter
+Multi (English/Bengali) Language using Codeigniter
+
+
