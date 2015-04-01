@@ -45,6 +45,54 @@ class Welcome extends CI_Controller {
 		$this->session->set_userdata($lang);
 		echo "done";
 	}
+
+
+	public function bycookie() {
+		// Load Helper
+			$this->load->helper('cookie'); 
+			$this->load->helper('language');
+		// SET ARRAY
+                $cookie_en = array(
+                'name'   => 'languageCi',
+                'value'  => 'eng',
+                'expire' => time()+86500,
+                );
+
+                $cookie_ch = array(
+                'name'   => 'languageCi',
+                'value'  => 'ben',
+                'expire' => time()+86500,
+                );	
+        // If language change by post
+        	 if (isset($_POST['lang']) && $_POST['lang']=='en') {
+                // delete chines
+                if (get_cookie('languageCi')) { delete_cookie("languageCi");    }
+                // en not already set
+                if (!get_cookie('languageCi')) {
+                        set_cookie($cookie_en);
+                }
+                 redirect("welcome/bycookie");
+                 
+	        } else if (isset($_POST['lang']) && $_POST['lang']=='ben')  {
+	                // delete english
+	                if (get_cookie('languageCi')) { delete_cookie("languageCi");    }
+	                // ch not already set
+	                if (!get_cookie('languageCi')) {
+	                // set chines
+	                	set_cookie($cookie_ch);
+	                }
+	               redirect("welcome/bycookie");
+	        } 
+        // Get COOKIE 
+	        if( get_cookie('languageCi')=="ben" ) {
+	        		 $this->lang->load('ben', 'bengoli');
+	        }else{
+	               $this->lang->load('en', 'english');
+	        }        
+
+	    // load view
+	    	 $this->load->view('test');    
+	}
 }
 
 /* End of file welcome.php */
