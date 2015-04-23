@@ -48,6 +48,7 @@ class Welcome extends CI_Controller {
 
 
 	public function bycookie() {
+
 		// Load Helper
 			$this->load->helper('cookie'); 
 			$this->load->helper('language');
@@ -68,19 +69,18 @@ class Welcome extends CI_Controller {
                 // delete chines
                 if (get_cookie('languageCi')) { delete_cookie("languageCi");    }
                 // en not already set
-                if (!get_cookie('languageCi')) {
-                        set_cookie($cookie_en);
-                }
+                 set_cookie($cookie_en);
+                 
                  redirect("welcome/bycookie");
                  
 	        } else if (isset($_POST['lang']) && $_POST['lang']=='ben')  {
+	        		//print_r($_POST);die;
 	                // delete english
 	                if (get_cookie('languageCi')) { delete_cookie("languageCi");    }
 	                // ch not already set
-	                if (!get_cookie('languageCi')) {
 	                // set chines
 	                	set_cookie($cookie_ch);
-	                }
+
 	               redirect("welcome/bycookie");
 	        } 
         // Get COOKIE 

@@ -110,6 +110,10 @@
 	 			</table>
 	 		</form>
 	 	</div>
+	 	<div class="container">
+	 		 <div class="container-head"> By Cookiee Example</div>
+	 		 <a href="<?php echo site_url('welcome/bycookie');?>">Go</a>
+	 	</div>
 </body>
 </html>
 
