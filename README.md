@@ -10,7 +10,7 @@ Multi (English/Bengali) Language using Codeigniter
 
 3. CI_Multi_Language/welcome/bycookie : Using Cookie
 
-									  : Cookie change by javascript
+3. CI_Multi_Language/welcome/bycookie : Cookie change by javascript
 
 
 
